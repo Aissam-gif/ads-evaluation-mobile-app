@@ -4,7 +4,7 @@ import { ScrollView } from 'react-native-virtualized-view';
 import { Stack, useRouter } from 'expo-router';
 
 import {COLORS, icons, images, SIZES} from '../constants';
-import {Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components'
+import {ReviewedAds, PopularAds, ScreenHeaderBtn, Welcome} from '../components'
 
 const Home = () => {
     const router = useRouter();
@@ -30,8 +30,8 @@ const Home = () => {
                     flex:1, padding: SIZES.medium
                 }}>
                     <Welcome />
-                    <Popularjobs />
-                    <Nearbyjobs />
+                    <PopularAds />
+                    <ReviewedAds />
                 </View>
             </ScrollView>
         </SafeAreaView>

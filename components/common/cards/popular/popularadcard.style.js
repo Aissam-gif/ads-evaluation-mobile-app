@@ -20,12 +20,18 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
   }),
+  companyAndLogoContainer: {
+    flex:1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between"
+  },
   logoImage: {
     width: "85%",
     height: "85%",
   },
   companyName: {
-    fontSize: SIZES.medium,
+    fontSize: SIZES.large,
     fontFamily: FONT.regular,
     color: "#B3AEC6",
     marginTop: SIZES.small / 1.5,
@@ -33,7 +39,7 @@ const styles = StyleSheet.create({
   infoContainer: {
     marginTop: SIZES.large,
   },
-  jobName: (selectedJob, item) => ({
+  adTitle: (selectedJob, item) => ({
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
     color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
@@ -49,7 +55,7 @@ const styles = StyleSheet.create({
     fontFamily: FONT.bold,
     color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
   }),
-  location: {
+  date: {
     fontSize: SIZES.medium - 2,
     fontFamily: FONT.regular,
     color: "#B3AEC6",

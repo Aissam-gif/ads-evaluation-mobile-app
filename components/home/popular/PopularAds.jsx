@@ -2,13 +2,13 @@ import React, {useState} from 'react'
 import { View, Text, FlatList, TouchableOpacity, ActivityIndicator } from 'react-native'
 import { useRouter } from 'expo-router'
 
-import styles from './popularjobs.style'
+import styles from './popularads.style'
 import {COLORS, SIZES} from '../../../constants'
-import PopularJobCard from '../../common/cards/popular/PopularJobCard'
+import PopularJobCard from '../../common/cards/popular/PopularAdCard'
 
 import useFetch from '../../../hook/useFetch'
 
-const Popularjobs = () => {
+const PopularAds = () => {
   const router = useRouter()
   
   const {data, isLoading, error} = useFetch('e36de334-dff3-40d0-afdc-d0ee293b1fae', {
@@ -48,4 +48,4 @@ const Popularjobs = () => {
   )
 }
 
-export default Popularjobs
+export default PopularAds
