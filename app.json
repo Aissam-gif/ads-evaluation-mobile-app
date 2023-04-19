@@ -5,6 +5,9 @@
       "bundler": "metro"
     },
     "name": "new-react-app",
-    "slug": "new-react-app"
+    "slug": "new-react-app",
+    "android": {
+      "package": "com.adEval.react"
+    }
   }
 }

@@ -46,7 +46,6 @@ const AdDetails = () => {
                 )    
         }
     }
-
   return (
     <SafeAreaView style={{flex:1, backgroundColor: COLORS.lightWhite}}>
         <Stack.Screen
@@ -82,20 +81,20 @@ const AdDetails = () => {
                     ) 
                     : (
                         <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
-                            <Company 
+                             <Company 
                                 adImage={data.image_url}
                                 adTitle={data.title}
                                 operatorName={data.operator}
                                 adDescription={data.description}
                                 adVideoLink={data.video_link}
                                 adDate={data.date}
-                            />
+                            /> 
                             <View style={{flex:1, alignItems:'center'}}>
-                                <JobTabs 
+                                 <JobTabs 
                                     tabs={tabs}
                                     activeTab={activeTab}
                                     setActiveTab={setActiveTab}
-                                />
+                                /> 
                             </View>
 
                             {displayTabContent()}

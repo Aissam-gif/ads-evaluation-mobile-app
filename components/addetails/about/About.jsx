@@ -3,6 +3,7 @@ import { View, Text, Image } from 'react-native'
 
 
 import styles from './about.style'
+import { checkImageURL } from '../../../utils';
 
 const About = ({ image_url, description }) => {
   return (
@@ -11,7 +12,7 @@ const About = ({ image_url, description }) => {
       
       <View style={styles.imageContainer}>
         <View style={styles.logoBox}>
-            <Image source={{uri: image_url}} style={styles.logoImage}/>
+            <Image source={{uri: checkImageURL(image_url) ? image_url : "https://t4.ftcdn.net/jpg/05/05/61/73/360_F_505617309_NN1CW7diNmGXJfMicpY9eXHKV4sqzO5H.jpg"}} style={styles.logoImage}/>
         </View>
       </View>
 
