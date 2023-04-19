@@ -5,7 +5,7 @@ import styles from './reviwedjobcard.style'
 
 const ReviewedAdCard = ({ad, handleNavigate}) => {
   return (
-    <TouchableOpacity style={styles.container} onPress={handleNavigate} >
+    <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>
         <Image 
           source={{uri: ad.image_url}}

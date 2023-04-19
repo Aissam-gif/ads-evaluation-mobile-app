@@ -14,7 +14,7 @@ const PopularAds = () => {
   const {data, isLoading, error} = useFetch('e36de334-dff3-40d0-afdc-d0ee293b1fae', {
 
   })
-  console.log(data)
+  // console.log(data)
   return (
     <View style={styles.container}>
         <View style={styles.header}>

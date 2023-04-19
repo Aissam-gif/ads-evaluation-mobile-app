@@ -6,11 +6,11 @@ import PopularAds from "./home/popular/PopularAds";
 import ReviewedAds from "./home/reviewed/ReviewedAds";  
 
 // job details screen
-import Company from "./jobdetails/company/Company";
-import { default as JobTabs } from "./jobdetails/tabs/Tabs";
-import { default as JobAbout } from "./jobdetails/about/About";
-import { default as JobFooter } from "./jobdetails/footer/Footer";
-import Specifics from "./jobdetails/specifics/Specifics";
+import Company from "./addetails/company/Company";
+import { default as JobTabs } from "./addetails/tabs/Tabs";
+import { default as JobAbout } from "./addetails/about/About";
+import { default as JobFooter } from "./addetails/footer/Footer";
+import Review from "./addetails/specifics/Review";
 
 // common
 import ReviewedAdCard from "./common/cards/reviewed/ReviewedAdCard";
@@ -24,6 +24,6 @@ export {
   JobTabs,
   JobAbout,
   JobFooter,
-  Specifics,
+  Review,
   ReviewedAdCard
 };

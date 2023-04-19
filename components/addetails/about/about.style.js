@@ -23,6 +23,23 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     marginVertical: SIZES.small / 1.25,
   },
+  imageContainer: {
+    marginVertical: SIZES.small,
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  logoBox: {
+    width: 400,
+    height: 250,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FFF",
+    borderRadius: SIZES.large,
+  },
+  logoImage: {
+    width: "80%",
+    height: "80%",
+  },
 });
 
 export default styles;
