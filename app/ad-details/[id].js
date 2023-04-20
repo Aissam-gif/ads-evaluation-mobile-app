@@ -48,7 +48,7 @@ const AdDetails = () => {
     }
   return (
     <SafeAreaView style={{flex:1, backgroundColor: COLORS.lightWhite}}>
-        <Stack.Screen
+        <Stack.Screen 
             options={{
                 headerStyle:{backgroundColor: COLORS.lightWhite},
                 headerShadowVisible: false,
@@ -71,6 +71,15 @@ const AdDetails = () => {
             }}
         />
             <>
+            <Company 
+                                adImage={data.image_url}
+                                adTitle={data.title}
+                                operatorName={data.operator}
+                                adDescription={data.description}
+                                adVideoLink={data.video_link}
+                                adDate={data.date}
+                            /> 
+
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {isLoading ? (
                         <ActivityIndicator size='large' color={COLORS.primary} />
@@ -80,15 +89,10 @@ const AdDetails = () => {
                         <Text>Data is unavailable</Text>
                     ) 
                     : (
+                        <>
+
                         <View style={{ padding: SIZES.medium, paddingBottom: 100 }}>
-                             <Company 
-                                adImage={data.image_url}
-                                adTitle={data.title}
-                                operatorName={data.operator}
-                                adDescription={data.description}
-                                adVideoLink={data.video_link}
-                                adDate={data.date}
-                            /> 
+                             
                             <View style={{flex:1, alignItems:'center'}}>
                                  <JobTabs 
                                     tabs={tabs}
@@ -100,6 +104,7 @@ const AdDetails = () => {
                             {displayTabContent()}
                          
                         </View>
+                        </>
                     )}
                 </ScrollView>
             </>

@@ -5,8 +5,10 @@ import { COLORS, FONT, SIZES } from "../../../constants";
 const styles = StyleSheet.create({
   container: {
     marginVertical: SIZES.medium,
+    marginBottom: 0,
     justifyContent: "center",
     alignItems: "center",
+    paddingBottom: 0
   },
   logoBox: {
     width: 400,

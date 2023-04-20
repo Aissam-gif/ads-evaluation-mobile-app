@@ -14,7 +14,6 @@ const ReviewedAds = () => {
   const {data, isLoading, error} = useFetch('fbf3f6d1-c324-4ec0-9b23-746a8bfb34bf', {
 
   })
-  console.log(data)
   return (
     <View style={styles.container}>
         <View style={styles.header}>
