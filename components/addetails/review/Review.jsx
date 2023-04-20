@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
-import { View, Text, Button, TouchableOpacity } from 'react-native'
+import { View, Text, Button, TouchableOpacity, Image } from 'react-native'
 import { Audio } from 'expo-av';
+
+
 import styles from './review.style'
 import { getDurationFormatted } from '../../../utils';
+import {icons, SIZES} from '../../../constants'
 
-const Review = ({youtubeRef}) => {
+const Review = ({}) => {
   const [recording, setRecording] = React.useState();
   const [userRecording, setUserRecording] = useState(undefined);
   const [message, setMessage] = React.useState("");
@@ -49,10 +52,16 @@ const Review = ({youtubeRef}) => {
 
   return (
     <View style={styles.container}>
-    <Button
-      title={recording ? 'Stop Recording' : 'Start Recording'}
-      onPress={recording ? stopRecording : startRecording}
-    />
+        <TouchableOpacity style={styles.recordBtn} 
+         onPress={recording ? stopRecording : startRecording}>
+          <Image 
+            source={icons.mic}
+            resizeMode='contain'
+            style={styles.recordBtnImage}
+          />
+        </TouchableOpacity>
+      
+        <Text style={styles.recordMessage}>{recording ? 'Stop Recording' : 'Review Ad'}</Text>
 
         {userRecording === undefined ? (<></>) : (
          <View style={styles.container}>

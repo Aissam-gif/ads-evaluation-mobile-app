@@ -44,7 +44,7 @@ const AdDetails = () => {
                 );
             case "Review" :
                 return (
-                    <Review youtubeRef={youtubeRef}/>
+                    <Review/>
                 )    
         }
     }
@@ -76,7 +76,6 @@ const AdDetails = () => {
                 <View>
                     {activeTab === "About" ? (
                         <Company 
-                        youtubeRef={youtubeRef}
                         adImage={data.image_url}
                         adTitle={data.title}
                         operatorName={data.operator}
