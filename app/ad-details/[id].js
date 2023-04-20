@@ -1,5 +1,5 @@
 import { Stack, useRouter, useSearchParams } from "expo-router";
-import { useCallback, useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import {
   View,
   Text,
@@ -26,6 +26,7 @@ const AdDetails = () => {
     const params = useSearchParams();
     const router = useRouter();
 
+
     const { data, isLoading, error, refetch } = useFetch("3690fd2e-a3eb-4bd5-9502-5f57009f22ef", {
         job_id: params.id,
       });
@@ -33,8 +34,9 @@ const AdDetails = () => {
     const [activeTab, setActiveTab] = useState(tabs[0]);  
     const [refreshing, setRefreshing] = useState(false);
     const onRefresh = () => {};
-
+    
     const displayTabContent = () => {
+       
         switch(activeTab) {
             case "About":
                 return (
@@ -42,7 +44,7 @@ const AdDetails = () => {
                 );
             case "Review" :
                 return (
-                    <Review />
+                    <Review youtubeRef={youtubeRef}/>
                 )    
         }
     }
@@ -71,14 +73,21 @@ const AdDetails = () => {
             }}
         />
             <>
-            <Company 
-                                adImage={data.image_url}
-                                adTitle={data.title}
-                                operatorName={data.operator}
-                                adDescription={data.description}
-                                adVideoLink={data.video_link}
-                                adDate={data.date}
-                            /> 
+                <View>
+                    {activeTab === "About" ? (
+                        <Company 
+                        youtubeRef={youtubeRef}
+                        adImage={data.image_url}
+                        adTitle={data.title}
+                        operatorName={data.operator}
+                        adDescription={data.description}
+                        adVideoLink={data.video_link}
+                        adDate={data.date}
+                    /> 
+                    ) : (
+                        <></>
+                    )}
+                </View>
 
                 <ScrollView showsVerticalScrollIndicator={false}>
                     {isLoading ? (

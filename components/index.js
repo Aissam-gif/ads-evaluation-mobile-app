@@ -10,7 +10,7 @@ import Company from "./addetails/company/Company";
 import { default as JobTabs } from "./addetails/tabs/Tabs";
 import { default as JobAbout } from "./addetails/about/About";
 import { default as JobFooter } from "./addetails/footer/Footer";
-import Review from "./addetails/specifics/Review";
+import Review from "./addetails/review/Review";
 
 // common
 import ReviewedAdCard from "./common/cards/reviewed/ReviewedAdCard";
