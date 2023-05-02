@@ -25,7 +25,9 @@ const PopularAds = () => {
     <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Popular Ads</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            router.push('/view-more/popular/morePopularAds')
+          }}>
             <Text style={styles.headerBtn}>Show All</Text>
           </TouchableOpacity>
         </View>

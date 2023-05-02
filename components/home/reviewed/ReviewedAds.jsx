@@ -18,7 +18,9 @@ const ReviewedAds = () => {
     <View style={styles.container}>
         <View style={styles.header}>
           <Text style={styles.headerTitle}>Recently Reviewed Ads</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => {
+            router.push('/view-more/reviewed/moreReviewedAds')
+          }}>
             <Text style={styles.headerBtn}>Show All</Text>
           </TouchableOpacity>
         </View>

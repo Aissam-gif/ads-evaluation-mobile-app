@@ -16,6 +16,7 @@ import Review from "./addetails/review/Review";
 import ReviewedAdCard from "./common/cards/reviewed/ReviewedAdCard";
 import NormalAdCard from "./common/cards/normal/NormalAdCard";
 
+
 export {
   ScreenHeaderBtn,
   Welcome,
@@ -27,5 +28,5 @@ export {
   JobFooter,
   Review,
   ReviewedAdCard,
-  NormalAdCard
+  NormalAdCard,
 };
