@@ -3,14 +3,14 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 
 import styles from './popularadcard.style'
 
-const PopularAdCard = ({item, selectAd, handleCardPress}) => {
+const PopularAdCard = ({item, selectedAd, handleCardPress}) => {
   return (
     <TouchableOpacity 
-      style={styles.container(selectAd, item)}
+      style={styles.container(selectedAd, item)}
       onPress={() => handleCardPress(item)}
     >
       <View style={styles.companyAndLogoContainer}>
-        <TouchableOpacity style={styles.logoContainer(selectAd, item)}>
+        <TouchableOpacity style={styles.logoContainer(selectedAd, item)}>
           <Image 
             source={{uri: item.image_url}}
             resizeMode='contain'
@@ -25,7 +25,7 @@ const PopularAdCard = ({item, selectAd, handleCardPress}) => {
     
 
       <View style={styles.infoContainer}>
-        <Text style={styles.adTitle(selectAd, item)} numberOfLines={2}>
+        <Text style={styles.adTitle(selectedAd, item)} numberOfLines={2}>
           {item.title}
         </Text>
         <Text style={styles.date}>{item.date}</Text>

@@ -33,7 +33,11 @@ const AdDetails = () => {
 
     const [activeTab, setActiveTab] = useState(tabs[0]);  
     const [refreshing, setRefreshing] = useState(false);
-    const onRefresh = () => {};
+    const onRefresh = useCallback(() => {
+        refreshing(true);
+        refetch();
+        refreshing(false);
+    }, []);
     
     const displayTabContent = () => {
        
@@ -88,7 +92,9 @@ const AdDetails = () => {
                     )}
                 </View>
 
-                <ScrollView showsVerticalScrollIndicator={false}>
+                <ScrollView showsVerticalScrollIndicator={false} refreshControl={
+                    <RefreshControl refreshing={refreshing} onRefresh={onRefresh}/>
+                }>
                     {isLoading ? (
                         <ActivityIndicator size='large' color={COLORS.primary} />
                     ) : error ? (

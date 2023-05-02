@@ -14,6 +14,12 @@ const PopularAds = () => {
   const {data, isLoading, error} = useFetch('fbf3f6d1-c324-4ec0-9b23-746a8bfb34bf', {
 
   })
+  const [selectedAd, setSelectedAd] = useState();
+  const handleCardPress = (item) => {
+    router.push(`/ad-details/${item.ad_id}`);
+    setSelectedAd(item.ad_id)
+  }
+
   // console.log(data)
   return (
     <View style={styles.container}>
@@ -34,8 +40,9 @@ const PopularAds = () => {
               data={data}
               renderItem={({ item }) => (
                 <PopularJobCard
-                selectAd={null}
+                selectedAd={selectedAd}
                 item = {item}
+                handleCardPress={handleCardPress}
                 />
           )}
               keyExtractor={item => item?.ad_id}
