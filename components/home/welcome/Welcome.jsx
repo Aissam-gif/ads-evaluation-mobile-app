@@ -44,7 +44,7 @@ const Welcome = ({searchTerm, setSearchTerm, handleClick}) => {
               style={styles.tab(activeOperator, item)}
               onPress={() => {
                 setActiveOperator(item);
-                router.push(`/search/${item}`)
+                router.push(`/search-operator/${item}`)
               }}
             >
               <Text style={styles.tabText(activeOperator, item)}>{item}</Text>
