@@ -3,6 +3,7 @@ import {View, Text, SafeAreaView} from 'react-native'
 import { ScrollView } from 'react-native-virtualized-view';
 import { Stack, useRouter } from 'expo-router';
 
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 
 import {COLORS, icons, images, SIZES} from '../constants';
@@ -20,9 +21,10 @@ const Home = () => {
         const checkLoginStatus = async () => {
         // Your authentication logic here
         // TODO: ASYNC STORAGE IS RESPONSIBLE FOR NOT WORKING 
-     //   const userToken = await AsyncStorage.getItem('userToken');
-     //   setIsLoggedIn(!!userToken);
-         setIsLoggedIn(false);
+        const userToken = await AsyncStorage.getItem('userToken');
+        setIsLoggedIn(!!userToken);
+     //    setIsLoggedIn(false);
+     console.log(isLoggedIn);
         };
 
         checkLoginStatus().catch((error) => {
@@ -35,6 +37,14 @@ const Home = () => {
         setIsLoggedIn(true);
         //router.push('/');
     };
+
+    const handleLogOut = async () => {
+        setIsLoggedIn(false);
+        await AsyncStorage.setItem('userToken', "")
+        window.location.reload(false)
+    }
+
+
     if (isLoggedIn) {
         return (
             <SafeAreaView style={{flex:1, backgroundColor: COLORS.lightWhite}}>
@@ -43,11 +53,8 @@ const Home = () => {
                     headerStyle: {backgroundColor: COLORS.lightWhite},
                     headerShadowVisible: false,
                     headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />
+                        <ScreenHeaderBtn iconUrl={icons.logout} dimension="60%" handlePress={handleLogOut}/>
                     ),
-                    headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
-                    ), 
                     headerTitle: ""
                 }}
             />
@@ -83,13 +90,7 @@ const Home = () => {
                 options={{
                     headerStyle: {backgroundColor: COLORS.lightWhite},
                     headerShadowVisible: false,
-                    headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl={icons.location} dimension="60%" />
-                    ),
-                    headerRight: () => (
-                        <ScreenHeaderBtn iconUrl={icons.location} dimension="60%" />
-                    ), 
-                    headerTitle: ""
+                    headerTitle: "Login"
                 }}
             />
 
