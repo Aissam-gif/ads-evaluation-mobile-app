@@ -14,3 +14,5 @@ export const  getDurationFormatted = (millis) => {
     const secondsDisplay = seconds < 10 ? `0${seconds}` : seconds;
     return `${minutesDisplay}:${secondsDisplay}`;
   }
+
+  export const SERVER_URL = "http://192.168.43.119:8080/ADEVAL/v1/ads/";

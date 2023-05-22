@@ -11,9 +11,8 @@ import useFetch from '../../../hook/useFetch'
 const ReviewedAds = () => {
   const router = useRouter()
   
-  const {data, isLoading, error} = useFetch('fbf3f6d1-c324-4ec0-9b23-746a8bfb34bf', {
-
-  })
+  const {data, isLoading, error} = useFetch('User/Reviwed/1', {})
+  console.log('REVIEWED ADS : ', data)
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -31,11 +30,12 @@ const ReviewedAds = () => {
           ) : error ? (
             <Text>Something went wrong</Text>
           ) : (
+            
            data?.map((ad) => (
             <ReviewedAdCard 
               ad={ad}
-              key={`recently-review-ad-${ad?.ad_id}`}
-              handleNavigate={() => router.push(`/ad-details/${ad.ad_id}`)}
+              key={`recently-review-ad-${ad?.id}`}
+              handleNavigate={() => router.push(`/ad-details/${ad.id}`)}
             />
            ))
           )}
