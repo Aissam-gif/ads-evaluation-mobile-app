@@ -16,8 +16,8 @@ const PopularAds = () => {
   })
   const [selectedAd, setSelectedAd] = useState();
   const handleCardPress = (item) => {
-    router.push(`/ad-details/${item.ad_id}`);
-    setSelectedAd(item.ad_id)
+    router.push(`/ad-details/${item.id}`);
+    setSelectedAd(item.id)
   }
 
   // console.log(data)
@@ -47,7 +47,7 @@ const PopularAds = () => {
                 handleCardPress={handleCardPress}
                 />
           )}
-              keyExtractor={item => item?.ad_id}
+              keyExtractor={item => item?.id}
               contentContainerStyle={{columnGap: SIZES.medium}}
               horizontal
             />

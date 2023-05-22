@@ -26,9 +26,8 @@ const AdDetails = () => {
     const params = useSearchParams();
     const router = useRouter();
 
+    const { data, isLoading, error, refetch } = useFetch(params.id, {
 
-    const { data, isLoading, error, refetch } = useFetch("3690fd2e-a3eb-4bd5-9502-5f57009f22ef", {
-        job_id: params.id,
       });
 
     const [activeTab, setActiveTab] = useState(tabs[0]);  
@@ -44,7 +43,7 @@ const AdDetails = () => {
         switch(activeTab) {
             case "About":
                 return (
-                    <JobAbout image_url={data.image_url} description={data.description ?? "No data provided"}/>
+                    <JobAbout image_url={data.image} description={data.description ?? "No data provided"}/>
                 );
             case "Review" :
                 return (
@@ -72,7 +71,7 @@ const AdDetails = () => {
                         dimension='60%'
                     />
                 ),
-                headerTitle: data.operator + " Advertisement",
+                headerTitle: data.operateur + " Advertisement",
                 
             }}
         />
@@ -80,11 +79,11 @@ const AdDetails = () => {
                 <View>
                     {activeTab === "About" ? (
                         <Company 
-                        adImage={data.image_url}
+                        adImage={data.image}
                         adTitle={data.title}
-                        operatorName={data.operator}
+                        operatorName={data.operateur}
                         adDescription={data.description}
-                        adVideoLink={data.video_link}
+                        adVideoLink={data.videoLink}
                         adDate={data.date}
                     /> 
                     ) : (

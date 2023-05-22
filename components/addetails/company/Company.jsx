@@ -8,7 +8,7 @@ import YouTube from 'react-native-youtube';
 
 const Company = ({adImage, adTitle, operatorName, adDescription, adVideoLink, adDate}) => {
 
-  return (
+  return (  
     <View style={styles.container}>
       <View style={styles.jobTitleBox}>
         <Text style={styles.jobTitle}>{adTitle}</Text>
@@ -19,8 +19,8 @@ const Company = ({adImage, adTitle, operatorName, adDescription, adVideoLink, ad
       
         <YouTube
             apiKey="AIzaSyBOpv7FQZUq2PQ9xk88wCdHSS0b0_sLHiA"
-            videoId="1DOdXyVFEgI" // The YouTube video ID
-            play={true} // control playback of video with true/false
+            videoId={adVideoLink} // The YouTube video ID
+            play={true} // contrrol playback of video with true/false
             loop // control whether the video should loop when ended
             onError={e => console.log(e)}
             style={{ alignSelf: 'stretch', height: 300}}

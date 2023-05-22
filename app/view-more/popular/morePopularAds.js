@@ -7,6 +7,7 @@ import { COLORS, SIZES, icons } from '../../../constants'
 import NormalAdCard from '../../../components/common/cards/normal/NormalAdCard'
 import ScreenHeaderBtn from '../../../components/common/header/ScreenHeaderBtn'
 import styles from '../../../styles/search'
+import { SERVER_URL } from '../../../utils'
 
 
 const MorePopularAds = () => {
@@ -21,10 +22,11 @@ const MorePopularAds = () => {
         setSearchLoader(true)
         setSearchResult([])
 
+        const userId = 1
         try {
             const options = {
                 method: "GET",
-                url: `https://mocki.io/v1/fbf3f6d1-c324-4ec0-9b23-746a8bfb34bf`,
+                url: SERVER_URL+"User/Reviwed/"+userId,
                 headers: {
                     "X-RapidAPI-Key": '',
                     "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
@@ -33,9 +35,10 @@ const MorePopularAds = () => {
                     query: params.id,
                 },
             }
-
+    
             const response = await axios.request(options);
-            setSearchResult(response.data.data)
+            const responseData = response; // Store the data in a separate variable        
+            setSearchResult(responseData.data);
         } catch (error) {
             setSearchError(error)
         console.log(error)
@@ -70,11 +73,11 @@ const MorePopularAds = () => {
                     item={item}
                     selectedAd={null}
                     handleCardPress={() => {
-                        router.push(`/ad-details/${item.ad_id}`)
+                        router.push(`/ad-details/${item.id}`)
                     }}
                 />
             )}
-            keyExtractor={(item) => item.ad_id}
+            keyExtractor={(item) => item.id}
             contentContainerStyle={{padding: SIZES.small, rowGap: SIZES.medium}}
             ListHeaderComponent={() => (
                 <>

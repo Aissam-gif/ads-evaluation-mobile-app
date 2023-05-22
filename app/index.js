@@ -64,7 +64,7 @@ const Home = () => {
                     flex:1, padding: SIZES.medium
                 }}>
             
-                              {/* <Welcome 
+                               <Welcome 
                         searchTerm={searchTerm}
                         setSearchTerm={setSearchTerm}
                         handleClick = {() => {
@@ -73,7 +73,7 @@ const Home = () => {
                            }
                         }}
                         />
-                        <PopularAds />  */}
+                         <PopularAds />   
                         <ReviewedAds />
                      
                        

@@ -12,7 +12,7 @@ const ReviewedAds = () => {
   const router = useRouter()
   
   const {data, isLoading, error} = useFetch('User/Reviwed/1', {})
-  console.log('REVIEWED ADS : ', data)
+ 
   return (
     <View style={styles.container}>
         <View style={styles.header}>
@@ -35,7 +35,7 @@ const ReviewedAds = () => {
             <ReviewedAdCard 
               ad={ad}
               key={`recently-review-ad-${ad?.id}`}
-              handleNavigate={() => router.push(`/ad-details/${ad.id}`)}
+              handleNavigate={() => router.push(`/ad-details/${ad?.id}`)}
             />
            ))
           )}

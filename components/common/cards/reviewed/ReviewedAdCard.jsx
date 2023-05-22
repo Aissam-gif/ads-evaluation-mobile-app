@@ -4,7 +4,6 @@ import { View, Text, TouchableOpacity, Image } from 'react-native'
 import styles from './reviwedjobcard.style'
 
 const ReviewedAdCard = ({ad, handleNavigate}) => {
-  console.log('REVIEWD AD CARD : ' + ad);
   return (
     <TouchableOpacity style={styles.container} onPress={handleNavigate}>
       <TouchableOpacity style={styles.logoContainer}>

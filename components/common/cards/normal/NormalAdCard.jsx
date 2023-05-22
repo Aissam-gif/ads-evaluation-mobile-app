@@ -12,7 +12,7 @@ const NormalAdCard = ({item, selectedAd, handleCardPress}) => {
       <View style={styles.companyAndLogoContainer}>
         <TouchableOpacity style={styles.logoContainer(selectedAd, item)}>
           <Image 
-            source={{uri: item.image_url}}
+            source={{uri: item.image}}
             resizeMode='contain'
             style={styles.logoImage}
           />
